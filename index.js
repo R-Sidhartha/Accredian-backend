@@ -8,7 +8,12 @@ require('dotenv').config();
 const app = express();
 
 const prisma = new PrismaClient();
-app.use(cors());
+// Configure CORS options if needed
+const corsOptions = {
+  origin: 'https://accredian-frontend-eta.vercel.app', // replace with your frontend URL
+  optionsSuccessStatus: 200
+};
+app.use(cors(corsOptions));
 app.use(bodyParser.json());
 
 const port = process.env.PORT || 5000;
