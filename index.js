@@ -5,11 +5,11 @@ const bodyParser = require('body-parser');
 const { PrismaClient } = require('@prisma/client');
 const nodemailer = require('nodemailer');
 require('dotenv').config();
-
 const app = express();
+
 const prisma = new PrismaClient();
-app.use(bodyParser.json());
 app.use(cors());
+app.use(bodyParser.json());
 
 const port = process.env.PORT || 5000;
 
